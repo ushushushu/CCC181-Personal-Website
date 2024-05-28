@@ -1,0 +1,484 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Monotype Italian Old Style', sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Bon Vivant Regular';
+    src: url('../CCC181 Personal Website/fonts/BonVivant-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Monotype Italian Old Style';
+    src: url('../CCC181 Personal Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
+}
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color1: #FFFFFF;
+    --text-color2: #000000;
+    --alternative-black: #333333;
+    --accent-color: #C39738;
+    --brighter-accent: #E4A62E;
+    --transitions: all 0.4s ease;
+    --total-slides: 3;
+}
+
+*::selection {
+    color: var(--brighter-accent);
+}
+
+body {
+    background-image: url("../CCC181 Personal Website/images/final1.png");
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    /* background-image: url("../CCC181 Personal Website/images/nav bg.png"); */
+    background: transparent;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+    /* -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); */
+}
+
+.navbar.active {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.logo-container {
+    width: 380px;
+    height: 100%;
+    /* background: red; */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 100%;
+}
+
+.menu a {
+    position: relative;
+    color: var(--text-color1);
+    font-size: 14px;
+    margin-left: 60px;
+    /* mix-blend-mode: difference; */
+}
+
+.menu a:hover {
+    color: var(--brighter-accent);
+    transition: var(--transitions);
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brighter-accent);
+    transition: var(--transitions);
+}
+
+.menu a:hover::before {
+    width: 100%;
+}
+
+/* OPENING */
+
+.opening {
+    /* background: red; */
+    /* width: 600px;
+    height: 150px;
+    margin-top: 170px;
+    margin-left: 110px;
+    display: flex;
+    align-items: center; */
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.opening h1 {
+    /* background: yellow; */
+    margin-top: 90px;
+    margin-left: 110px;
+    font-family: 'Bon Vivant Regular', serif;
+    color: var(--text-color1);
+    font-size: 150px;
+    font-weight: lighter;
+    z-index: 1;
+    position: absolute;
+}
+
+.opening h2 {
+    /* background: orange; */
+    position: absolute;
+    font-size: 18px;
+    color: var(--brighter-accent);
+    top: 290px;
+    left: 110px;
+    z-index: 2;
+    font-weight: lighter;
+}
+
+.opening-paragraph p {
+    /* background: red; */
+    font-family: 'Roboto', sans-serif;
+    /* font-weight: bolder; */
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    font-size: 15px;
+    color: var(--text-color1);
+    margin-top: 330px;
+    margin-left: 110px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.button-container {
+    margin-top: 450px;
+    margin-left: 110px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.button-container button {
+    background: transparent;
+    color: var(--text-color1);
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--text-color1);
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background: var(--bg-color);
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--bg-color);
+    border-radius: 50%;
+    color: var(--accent-color);
+    transition: var(--transitions);
+}
+
+.button-container .round-button .fa-linkedin-in {
+    font-size: 1rem;
+    width: 100%;
+}
+
+.button-container .round-button .fa-github-alt {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.button-container .round-button .fa-paper-plane {
+    font-size: 1rem;
+    width: 100%;
+}
+
+.welcome-section {
+    background: var(--alternative-black);
+    /* background: var(--bg-color); */
+    margin-top: 620px;
+    width: 100%;
+    height: 330px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.welcome-section p {
+    /* background: yellow; */
+    padding-bottom: 20px;
+    width: 600px;
+    font-size: 25px;
+    color: var(--text-color1);
+    /* color: var(--alternative-black); */
+    text-align: center;
+}
+
+.welcome-section h3 {
+    /* background: blue; */
+    font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
+    color: var(--accent-color);
+    font-size: 12px;
+    text-align: center;
+    /* display: flex; */
+}
+
+.literature-text {
+    position: absolute;
+    /* background: var(--alternative-black); */
+    background: #7c474a;
+    margin-top: 950px;
+    width: 100%;
+    height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.literature-text h1 {
+    font-family: 'Playfair Display', serif;
+    /* font-family: 'Bon Vivant Regular', serif; */
+    position: absolute;
+    top: 70px;
+    /* top: -45px; */
+    /* color: #f6dab4; */
+    color: var(--accent-color);
+    font-size: 10vw;
+    /* font-size: 20vw; */
+    letter-spacing: 5px;
+    font-weight: lighter;
+}
+
+.quote-container {
+    position: absolute;
+    margin-top: 990px;
+    width: 100%;
+    height: 100px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-container h3 {
+    color: var(--text-color1);
+    font-size: 20px;
+    font-weight: lighter;
+    position: absolute;
+}
+
+.options-container {
+    /* background: black; */
+    position: absolute;
+    margin-top: 1020px;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    padding-left: 380px;
+    padding-right: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* z-index: 5; */
+    /* backdrop-filter: blur(10px); */
+}
+
+.options-container h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: var(--text-color1);
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+#statue-model {
+    /* background: var(--accent-color); */
+    height: 620px;
+    width: 100%;
+    margin-top: 950px;
+    position: absolute;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    overflow: hidden;
+    /* background: var(--alternative-black); */
+    /* top: calc(50% - 250px); */
+    /* right: 7%; */
+}
+
+/* This styles the 3D object inserted in the aside container */
+#statue-model model-viewer {
+    /* background: yellow; */
+    top: -100px;
+    overflow: hidden;
+    height: 300%;
+    width: 100%;
+    position: relative;
+    /* rotate: 90deg; */
+    /* position: {[0, -6, 0]} ; */
+    margin-left: 8%;
+    z-index: 4;
+}
+
+/* .shadow {
+    z-index: 4;
+    background: rgba(0,0,0, 0.3);
+    height: 620px;
+    width: 100%;
+    margin-top: 950px;
+    position: absolute;
+} */
+
+/* .lights-overlay {
+    z-index: 5;
+    background: radial-gradient(circle at top, rgba(255,255,255,0.4), 20%, rgba(0,0,0,0.1));
+    height: 620px;
+    width: 100%;
+    margin-top: 950px;
+    position: absolute;
+} */
+
+.portfolio-container {
+    margin-top: 1570px;
+    width: 100%;
+    height: 620px;
+    /* background: var(--alternative-black); */
+    background: var(--bg-color);
+    /* background: yellow; */
+    /* background: #fff; */
+    position: absolute;
+}
+
+.portfolio-text {
+    /* background: yellow; */
+    float: right;
+    position: relative;
+    margin-top: 100px;
+    /* margin-top: 80px; */
+    
+    margin-right: 68px;
+
+    /* width: 661px; */
+    /* width: 595px; */
+    
+    /* 54 space between */
+
+    width: 541px;
+    height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 190px;
+    /* column-gap: 50px; */
+}
+
+.portfolio-txt-heading {
+    /* background: green; */
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.portfolio-text h1 {
+    /* background: red; */
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    /* font-family: 'Bon Vivant Regular', serif; */
+    color: var(--alternative-black);
+    font-size: 4vw;
+    font-weight: lighter;
+    /* left: 120px; */
+    /* position: absolute; */
+    line-height: 60px;
+}
+
+.portfolio-text h2 {
+    /* background: blue; */
+    font-size: 18px;
+    color: var(--brighter-accent);
+    /* top: 100px;
+    left: 120px; */
+    /* left: 138px; */
+    z-index: 1;
+    font-weight: lighter;
+}
+
+.portfolio-text p {
+    font-family: 'Roboto', sans-serif;
+    /* background: orange; */
+    font-size: 15px;
+    /* padding-top: 50px; */
+    /* top: 50px; */
+    padding-left: 76px;
+    padding-right: 76px;
+    text-align: justify;
+
+}
+
+.slider-container {
+    /* background: black; */
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 70px;
+    width: 550px;
+    height: 470px;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.2);
+}
+
+.slider-img {
+	display: flex;
+	aspect-ratio: 16/9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.slider-img::-webkit-scrollbar {
+	display: none;
+}
+
+.slider-img img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.radio-container {
+    display: flex;
+	column-gap: 1rem;
+	position: absolute;
+    margin-top: 300px;
+    margin-left: 630px;
+    rotate: 90deg;
+    /* z-index: 1; */
+}
+
+.radio-container input {
+    width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+    accent-color: var(--alternative-black);
+    cursor: pointer;
+}
+
+.radio-container input:hover {
+    outline-color: var(--accent-color);
+}

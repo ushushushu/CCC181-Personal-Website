@@ -1,0 +1,262 @@
+<!-- 
+    
+    ****************************
+    *                          *
+    *  SUBMITTED BY:           *
+    *                          * 
+    *  Usha Nicole C. Cobrado  *
+    *  BS Information Systems  *
+    *  CCC181 IS3A             *
+    *                          *
+    ****************************
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title> Cobrado's Personal Website | CCC181 Assignment </title>
+    
+        <!-- FONT AWESOME ICONS -->
+        <script src="https://kit.fontawesome.com/f18d0a2b9b.js" crossorigin="anonymous"></script>
+
+        <!-- STYLESHEET -->
+        <link rel = "stylesheet" type = "text/css" href = "MAIN_stylesheet.css" />
+    
+        <!-- EMBEDDED GOOGLE FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+        <!--MODEL VIEWER -->
+        <!-- Handles how the 3D Object would be displayed -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        
+        <!-- ICON -->
+        <link rel="icon" type="image/x-icon" href="../CCC181 Personal Website/images/black owl.ico" />
+    </head>
+
+    <body>
+
+    <!---------------------------- NAVIGATION BAR ---------------------------->
+        
+        <section id="nav-section">
+            
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img id="logo-img" src="../CCC181 Personal Website/images/fit white logo1.png">
+                </div>
+                    
+                <div id="menu" class="menu">
+                    <a href="MAIN.html">HOME</a>
+                    <a href="blog.html">WRITING BLOG</a>
+                    <a href="portfolio.html">PORTFOLIO</a>
+                    <a href="aboutusha.html">ABOUT ME</a>
+                </div>
+                
+            </nav>
+
+        </section>
+
+        <!-- JAVASCRIPT FOR BLURRING NAVBAR UPON WINDOW SCROLL -->
+        <script>
+            const nav = document.querySelector('.navbar');
+            const logoimg =document.getElementById('logo-img');
+
+            window.onscroll = () => {
+                if (window.scrollY > 1) {
+                    nav.classList.add('active');
+                } else {
+                    nav.classList.remove('active');
+                }
+                
+                document.querySelectorAll('.menu a').forEach(function(element) {
+                    if (window.scrollY >= 1570) {
+                        element.style.color="var(--text-color2)";
+                    } else {
+                        element.style.color="var(--text-color1)";
+                    }
+                });
+
+                if (window.scrollY >= 1570) {
+                    logoimg.setAttribute('src','../CCC181 Personal Website/images/fit black logo1.png');
+                } else {
+                    logoimg.setAttribute('src','../CCC181 Personal Website/images/fit white logo1.png');
+                }
+
+            };
+        </script>
+
+    <!---------------------------- HEADER ---------------------------->
+        <section id="section1">
+
+            <div class="opening">
+                <h1> librokwago </h1>
+                <h2> [noun] /'li.bro ku'ago/ </h2>
+                <div class="opening-paragraph">
+                    <p>
+                        In Filipino, "libro" means book, while "kwago" means an owl. 
+                        That is to say, LIBRO KWAGO is the book of an owl.
+                        Alternatively, the name of Usha Cobrado's writing blog and personal website.
+                    </p>
+                </div>
+            </div>
+            
+            <div class = "button-container">
+                <!-- <a href="#">
+                    <button class="opening-button1">
+                        See My Work
+                    </button>
+                </a>
+                
+                <a href="#">
+                    <button class="opening-button1">
+                        Contact Me
+                    </button>
+                </a> -->
+
+                <a href = "https://www.linkedin.com/in/usha-nicole-cobrado/">
+                    <button class="round-button">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </button>
+                </a>
+                
+                <a href="https://github.com/ushushushu">
+                    <button class="round-button">
+                        <i class="fa-brands fa-github-alt"></i>
+                    </button>
+                </a>
+
+                
+                <a href="mailto:ushanicole.cobrado@g.msuiit.edu.ph">
+                    <button class="round-button">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </a>
+
+            </div>
+
+        </section>
+
+    <!---------------------------- WELCOME SECTION ---------------------------->
+        <section id="section2">
+            <div class="welcome-section">
+                <p>
+                    Mabuhay, mga manunulat.<br>
+                    Welcome to Libro Kwago, a personal writing blog of mine containting all my written works, such as poems, stories, one-shots, and etc.
+                    Let's read and write till the owls tell our tales!
+                </p>
+                <h3>
+                    Copyright 2017-2023. All rights reserved.
+                </h3>
+            </div>
+        </section>
+
+    <!---------------------------- 3D MODEL SECTION ---------------------------->
+        <section id="section3">
+            
+            <!-- <div class="quote-container">
+                <h3><i>"verba volant, scripta manent"</i></h3>
+            </div> -->
+
+            <div class="literature-text"> 
+                <h1>LITERATURE</h1>
+            </div>
+
+            <div class="options-container">
+                <h3>POETRY</h3>
+                <h3>SHORT STORIES</h3>
+                <h3>WRITING PROMPTS</h3>
+                <h3>FICTION</h3>
+                <h3>READING LOGS</h3>
+            </div>
+
+            <div id="statue-model">
+                <!-- 3D MODEL -->
+                <!-- <model-viewer src="../CCC181 Personal Website/assets/scene.gltf" auto-rotate camera-controls ar ios-src="../CCC181 Personal Website/assets/scene.gltf"></model-viewer> -->
+                <model-viewer
+                    id="model" 
+                    ar
+                    auto-rotate
+                    environment-image="../CCC181 Personal Website/assets/poly_haven_studio_4k.hdr"
+                    src="../CCC181 Personal Website/assets/scene.gltf"  
+                    ios-src="../CCC181 Personal Website/assets/scene.gltf"
+                    loading="eager"
+                >
+
+                </model-viewer>
+            </div>
+
+            <!-- <div class="shadow"></div> -->
+            <!-- <div class="lights-overlay"></div> -->
+
+        </section>
+
+    <!---------------------------- PORTFOLIO ---------------------------->
+        <section id="section4">
+            
+            <div class="portfolio-container">
+
+                <div class="portfolio-content"> 
+
+                    <div class="slider-container">
+
+                        <div class="slider-img first">
+
+                            <img id="slide1-img" src="../CCC181 Personal Website/images/pharmalogue.png"/>
+                            <img id="slide2-img" src="../CCC181 Personal Website/images/milkqtea.png"/>
+                            <img id="slide3-img" src="../CCC181 Personal Website/images/maze game.png"/>
+                            <img id="slide4-img" src="../CCC181 Personal Website/images/scical.png"/>
+
+                        </div>
+
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" name="radio-btn" id="slide1" onclick="location.href='#slide1-img';" checked>
+                        <input type="radio" name="radio-btn" id="slide2" onclick="location.href='#slide2-img';">
+                        <input type="radio" name="radio-btn" id="slide3" onclick="location.href='#slide3-img';">
+                        <input type="radio" name="radio-btn" id="slide4" onclick="location.href='#slide4-img';">
+                    </div>
+
+                </div>
+
+                <div class="portfolio-text">
+                    <div class="portfolio-txt-heading">
+                        <h1>PORTFOLIO</h1>
+                        <h2> [noun] /'portfolio/ </h2>
+                    </div>
+                    
+                    <p>
+                        A collection of significant programming projects accumulated
+                        since my first day as a BS Information Systems student.
+                        The pictures to the left serve as a teaser to the actual systems themselves.
+                        This website contains information to four (4) prototype systems, one of which is an online system.
+                        The rest could be found in my Github link.
+                    </p>
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                var counter = 1;
+                setInterval(function(){
+                  document.getElementById('radio' + counter).checked = true;
+                  counter++;
+                  if(counter > 4){
+                    counter = 1;
+                  }
+                }, 5000);
+            </script>
+            
+        
+        </section>
+
+    </body>
+
+</html>

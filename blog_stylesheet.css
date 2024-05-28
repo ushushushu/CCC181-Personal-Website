@@ -1,0 +1,574 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Monotype Italian Old Style', sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Bon Vivant Regular';
+    src: url('../CCC181 Personal Website/fonts/BonVivant-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Monotype Italian Old Style';
+    src: url('../CCC181 Personal Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
+}
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color1: #FFFFFF;
+    --text-color2: #000000;
+    --alternative-black: #333333;
+    --accent-color: #C39738;
+    --brighter-accent: #E4A62E;
+    --transitions: all 0.4s ease;
+    --total-slides: 3;
+}
+
+*::selection {
+    color: var(--brighter-accent);
+}
+
+body {
+    /* background-image: url("../CCC181 Personal Website/images/final1.png"); */
+    background: var(--bg-color);
+    color: var(--text-color2);
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    /* background-image: url("../CCC181 Personal Website/images/nav bg.png"); */
+    background: transparent;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+    /* -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); */
+}
+
+.navbar.active {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.logo-container {
+    width: 380px;
+    height: 100%;
+    /* background: red; */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 100%;
+}
+
+.menu a {
+    position: relative;
+    color: var(--text-color2);
+    font-size: 14px;
+    margin-left: 60px;
+    /* mix-blend-mode: difference; */
+}
+
+.menu a:hover {
+    color: var(--brighter-accent);
+    transition: var(--transitions);
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brighter-accent);
+    transition: var(--transitions);
+}
+
+.menu a:hover::before {
+    width: 100%;
+}
+
+/* LIGHT / DARK MODE */
+.show-settings {
+    background: var(--text-color2);
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.close-settings {
+    background: var(--text-color2);
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.lightmode,
+.middlemode,
+.darkmode {
+    background: var(--text-color2);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* position: fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.lightmode:hover,
+.middlemode:hover,
+.darkmode:hover {
+    background: var(--);
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.2)
+}
+
+.screen-mode {
+    bottom: 86px;
+    right: 30px;
+    width: 56px;
+    height: 168px;
+    /* background: red; */
+    position: fixed;
+    opacity: 0;
+    /* display: flex; */
+    transition: all 0.2s ease-in;
+    z-index: 100;
+}
+
+.screen-mode.active {
+    opacity: 1;
+    transition: all 0.2s ease-in;
+}
+
+.show-settings i,
+.close-settings i {
+    color: var(--text-color1);
+    font-size: 1.5rem;
+}
+
+.lightmode i,
+.middlemode i,
+.darkmode i {
+    color: var(--text-color1);
+    font-size: 1rem;
+}
+
+.show-settings.inactive {
+    display: none;
+}
+
+.close-settings.active {
+    opacity: 1;
+}
+
+#section2 {
+    width: 100%;
+    height: 620px;
+    top: 0;
+    left: 0;
+    /* background: green; */
+}
+
+.heading-container {
+    /* background: red; */
+    /* width: 400px;
+    height: 300px; */
+    padding-top: 80px;
+    margin-left: 70px;;
+    position: relative;
+}
+
+.heading-container h1 {
+    /* background: red; */
+    font-family: 'Bon Vivant Regular', serif;
+    font-size: 5vw;
+    position: absolute;
+    font-weight: lighter;
+    color: var(--text-color2);
+}
+
+.content-container {
+    /* background: orange; */
+    width: 834px;
+    height: 100%;
+    margin-top: 110px;
+    margin-left: 70px;
+    position: absolute;
+    /* z-index: 1; */
+}
+
+.sidebar {
+    float: right;
+    /* background: blue; */
+    margin-top: 110px;
+    margin-right: 70px;
+    width: 325px;
+    height: 276px;
+    position: relative;
+    border: 1px solid var(--text-color2);
+    border-radius: 25px;
+    /* z-index: 1; */
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.sidebar h2 {
+    font-weight: lighter;
+    font-size: 30px;
+    position: absolute;
+    color: var(--text-color2);
+}
+
+.tags-container2 {
+    width: 100%;
+    height: 170px;
+    /* background: yellowgreen; */
+    margin-top: 45px;
+    position: relative;
+    /* justify-content: space-between; */
+}
+
+#poetry1,
+#activism1,
+#ff-poetry1,
+#writing-prompt1,
+#short-story1,
+#epistolary1 {
+    position: absolute;
+    height: 35px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#poetry1 {
+    width: 80px;
+}
+
+#activism1 {
+    width: 80px;
+    margin-left: 90px;
+}
+
+#ff-poetry1 {
+    width: 140px;
+    margin-top: 45px;
+}
+
+#writing-prompt1 {
+    width: 130px;
+    margin-top: 90px;
+}
+
+#short-story1 {
+    width: 100px;
+    margin-top: 90px;
+    margin-left: 140px;
+}
+
+#epistolary1 {
+    width: 100px;
+    margin-top: 135px;
+}
+
+#poetry1:hover,
+#activism1:hover,
+#ff-poetry1:hover,
+#writing-prompt1:hover,
+#short-story1:hover,
+#epistolary1:hover {
+    background: var(--accent-color);
+}
+
+.poems-container {
+    /* background:yellow; */
+    width: 100%;
+    height: 1042px;
+    border: 1px solid var(--text-color2);
+    border-radius: 25px;
+    /* padding: 30px; */
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* padding-bottom: 30px; */
+}
+
+.poems-container h2 {
+    /* background: red; */
+    font-weight: lighter;
+    /* top: 30px;
+    margin-left: 30px; */
+    font-size: 30px;
+    position: absolute;
+    color: var(--text-color2);
+}
+
+.tags-container {
+    width: 100%;
+    height: 40px;
+    /* background: var(--accent-color); */
+    margin-top: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#poetry {
+    /* content:''; */
+    position: absolute;
+    height: 35px;
+    width: 80px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#activism {
+    position: absolute;
+    height: 35px;
+    width: 80px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 90px;
+}
+
+#ff-poetry {
+    position: absolute;
+    height: 35px;
+    width: 140px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 180px;
+}
+
+#poetry:hover,
+#activism:hover,
+#ff-poetry:hover {
+    background: var(--accent-color);
+    transition: var(--transitions);
+}
+
+.poems-container p {
+    /* background: blue; */
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    /* position: absolute; */
+    margin-top: 35px;
+    color: var(--text-color2);
+}
+
+.prompt-container {
+    /* background:yellow; */
+    width: 100%;
+    height: 1384px;
+    border: 1px solid var(--text-color2);
+    border-radius: 25px;
+    /* padding: 30px; */
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* padding-bottom: 30px; */
+    margin-top: 20px;
+}
+
+.prompt-container h2 {
+    /* background: red; */
+    font-weight: lighter;
+    /* top: 30px;
+    margin-left: 30px; */
+    font-size: 30px;
+    position: absolute;
+    color: var(--text-color2);
+}
+
+#writing-prompt {
+    /* content:''; */
+    position: absolute;
+    height: 35px;
+    width: 130px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#short-story {
+    position: absolute;
+    height: 35px;
+    width: 100px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 140px;
+}
+
+#writing-prompt:hover,
+#short-story:hover {
+    background: var(--accent-color);
+    transition: var(--transitions);
+}
+
+.prompt-container p {
+    /* background: blue; */
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    /* position: absolute; */
+    margin-top: 35px;
+    color: var(--text-color2);
+}
+
+.log-container {
+    /* background:yellow; */
+    width: 100%;
+    height: 1650px;
+    border: 1px solid var(--text-color2);
+    border-radius: 25px;
+    /* padding: 30px; */
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* padding-bottom: 30px; */
+    margin-top: 20px;
+}
+
+.log-container h2 {
+    /* background: red; */
+    font-weight: lighter;
+    /* top: 30px;
+    margin-left: 30px; */
+    font-size: 30px;
+    position: absolute;
+    color: var(--text-color2);
+}
+
+#epistolary {
+    /* content:''; */
+    position: absolute;
+    height: 35px;
+    width: 100px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#short-story2 {
+    position: absolute;
+    height: 35px;
+    width: 100px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: var(--text-color1);
+    background: var(--alternative-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 110px;
+}
+
+#epistolary:hover,
+#short-story2:hover {
+    background: var(--accent-color);
+    transition: var(--transitions);
+}
+
+.log-container p {
+    /* background: blue; */
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    /* position: absolute; */
+    margin-top: 35px;
+    color: var(--text-color2);
+}
+
+#poetry,
+#activism,
+#ff-poetry,
+#writing-prompt,
+#short-story,
+#epistolary,
+#short-story2 {
+    cursor: pointer;
+}

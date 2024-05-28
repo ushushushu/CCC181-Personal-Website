@@ -1,0 +1,503 @@
+<!-- 
+    
+    ****************************
+    *                          *
+    *  SUBMITTED BY:           *
+    *                          * 
+    *  Usha Nicole C. Cobrado  *
+    *  BS Information Systems  *
+    *  CCC181 IS3A             *
+    *                          *
+    ****************************
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title> Cobrado's Personal Website | CCC181 Assignment </title>
+    
+        <!-- FONT AWESOME ICONS -->
+        <script src="https://kit.fontawesome.com/f18d0a2b9b.js" crossorigin="anonymous"></script>
+
+        <!-- STYLESHEET -->
+        <link rel = "stylesheet" type = "text/css" href = "blog_stylesheet.css" />
+    
+        <!-- EMBEDDED GOOGLE FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+        <!--MODEL VIEWER -->
+        <!-- Handles how the 3D Object would be displayed -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    
+        <link rel="icon" type="image/x-icon" href="../CCC181 Personal Website/images/black owl.ico" />
+
+    </head>
+
+    <body>
+
+    <!---------------------------- NAVIGATION BAR ---------------------------->
+        
+        <section id="nav-section">
+            
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img id="logo-img" src="../CCC181 Personal Website/images/fit black logo1.png">
+                </div>
+                    
+                <div id="menu" class="menu">
+                    <a href="MAIN.html">HOME</a>
+                    <a href="blog.html">WRITING BLOG</a>
+                    <a href="portfolio.html">PORTFOLIO</a>
+                    <a href="aboutusha.html">ABOUT ME</a>
+                </div>
+                
+            </nav>
+
+        </section>
+
+        <!-- JAVASCRIPT FOR BLURRING NAVBAR UPON WINDOW SCROLL -->
+        <script>
+            const nav = document.querySelector('.navbar');
+            const logoimg = document.getElementById('logo-img');
+
+            window.onscroll = () => {
+                if (window.scrollY > 1) {
+                    nav.classList.add('active');
+                } else {
+                    nav.classList.remove('active');
+                }
+            };
+        </script>
+
+    <!---------------------------- LIGHT/DARK MODE BUTTONS ---------------------------->
+        <section id="section1">
+
+            <nav class="screen-settings">
+
+                <div class="close-settings" onclick="">
+                    <i id="btn" class="fa-solid fa-gear"></i>
+                </div>
+
+                <div class="show-settings" onclick="">
+                    <i id="btn" class="fa-solid fa-gear"></i>
+                </div>
+
+                <div class="screen-mode">
+
+                    <div id="modebtn" class="lightmode" onclick="lightMode()">
+                        <i id="btn" class="fa-solid fa-sun"></i>
+                    </div>
+
+                    <div id="modebtn" class="middlemode" onclick="middleMode()">
+                        <i id="btn" class="fa-solid fa-circle-half-stroke"></i>
+                    </div>
+
+                    <div id="modebtn" class="darkmode" onclick="darkMode()">
+                        <i id="btn" class="fa-solid fa-moon"></i>
+                    </div>
+                    
+                </div>
+
+                <script>
+                    // opening & closing settings button
+                    const showBtn = document.querySelector(".show-settings");
+                    const closeBtn = document.querySelector(".close-settings"); 
+                    const showMode = document.querySelector(".screen-mode");
+                    const logoimg1 = document.getElementById("logo-img");
+                    
+                    showBtn.addEventListener("click", ()=> showMode.classList.add("active"));
+                    showBtn.addEventListener("click", ()=> showBtn.classList.add("inactive"));
+                    showBtn.addEventListener("click", ()=> closeBtn.classList.add("active"));
+
+
+                    closeBtn.addEventListener("click", ()=> showMode.classList.remove("active"));
+                    closeBtn.addEventListener("click", ()=> showBtn.classList.remove("inactive"));
+                    closeBtn.addEventListener("click", ()=> closeBtn.classList.remove("active"));
+
+                    // selecting screen mode
+                    function lightMode() {
+
+                        document.body.style.background = "var(--bg-color)";
+                        logoimg1.setAttribute('src','../CCC181 Personal Website/images/fit black logo1.png');
+                        showBtn.style.background = "var(--text-color2)";
+                        closeBtn.style.background = "var(--text-color2)";
+
+                        document.querySelectorAll('.menu a').forEach(function(element) {
+                            element.style.color = "var(--text-color2)";
+                        });
+                        
+                        document.querySelectorAll('#btn').forEach(function(element) {
+                            element.style.color = "var(--bg-color)";
+                        });
+                        
+                        document.querySelectorAll('#modebtn').forEach(function(element) {
+                            element.style.background = "var(--text-color2)";
+                        });
+
+                        document.querySelectorAll('.body-txt').forEach(function(element) {
+                            element.style.color = "var(--text-color2)";
+                        });
+
+                        document.querySelectorAll('.body-txt1').forEach(function(element) {
+                            element.style.background = "var(--alternative-black)";
+                            element.style.color = "var(--text-color1)";
+                        });
+
+                        document.querySelectorAll('.body-txt-border').forEach(function(element) {
+                            element.style.border = "1px solid var(--text-color2)";
+                        });
+
+                    }
+
+                    function middleMode() {
+
+                        document.body.style.background = "#f4ecd8";
+                        logoimg1.setAttribute('src','../CCC181 Personal Website/images/fit brown logo1.png');
+                        showBtn.style.background = "#3a291c";
+                        closeBtn.style.background = "#3a291c";
+
+                        document.querySelectorAll('.menu a').forEach(function(element) {
+                            element.style.color = "#3a291c";
+                        });
+                        
+                        document.querySelectorAll('#btn').forEach(function(element) {
+                            element.style.color = "#f4ecd8";
+                        });
+                        
+                        document.querySelectorAll('#modebtn').forEach(function(element) {
+                            element.style.background = "#3a291c";
+                        });
+
+                        document.querySelectorAll('.body-txt').forEach(function(element) {
+                            element.style.color = "#3a291c";
+                        });
+
+                        document.querySelectorAll('.body-txt1').forEach(function(element) {
+                            element.style.background = "#3a291c";
+                            element.style.color = "#f4ecd8";
+                        });
+
+                        document.querySelectorAll('.body-txt-border').forEach(function(element) {
+                            element.style.border = "1px solid #3a291c";
+                        });
+
+                    }
+                
+                    function darkMode() {
+
+                        document.body.style.background = "var(--alternative-black)";
+                        logoimg1.setAttribute('src','../CCC181 Personal Website/images/fit white logo1.png');
+                        showBtn.style.background = "var(--text-color1)";
+                        closeBtn.style.background = "var(--text-color1)";
+
+                        document.querySelectorAll('.menu a').forEach(function(element) {
+                            element.style.color = "var(--text-color1)";
+                        });
+                        
+                        document.querySelectorAll('#btn').forEach(function(element) {
+                            element.style.color = "var(--alternative-black)";
+                        });
+                        
+                        document.querySelectorAll('#modebtn').forEach(function(element) {
+                            element.style.background = "var(--text-color1)";
+                        });
+
+                        document.querySelectorAll('.body-txt').forEach(function(element) {
+                            element.style.color = "var(--text-color1)";
+                        });
+
+                        document.querySelectorAll('.body-txt1').forEach(function(element) {
+                            element.style.background = "var(--bg-color)";
+                            element.style.color = "var(--alternative-black)";
+                        });
+
+                        document.querySelectorAll('.body-txt-border').forEach(function(element) {
+                            element.style.border = "1px solid var(--text-color1)";
+                        });
+                    
+                    }
+                </script>
+
+            </nav>
+
+        </section>
+    
+    <!---------------------------- CONTENT ---------------------------->
+
+            <div class="sidebar body-txt-border">
+                <h2 class="body-txt">Tags</h2>
+                <div class="tags-container2">
+                    <a href="#poetry">
+                        <div class="body-txt1" id="poetry1">poetry</div>
+                    </a>
+                    
+                    <a href="#activism">
+                        <div class="body-txt1" id="activism1">activism</div>
+                    </a>
+
+                    <a href="#ff-poetry">
+                        <div class="body-txt1" id="ff-poetry1">freeform poetry</div>
+                    </a>
+
+                    <a href="#writing-prompt">
+                        <div class="body-txt1" id="writing-prompt1">writing prompt</div>
+                    </a>
+
+                    <a href="#short-story">
+                        <div class="body-txt1" id="short-story1" >short story</div>
+                    </a>
+
+                    <a href="#epistolary">
+                        <div class="body-txt1" id="epistolary1" >epistolary</div>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="content-container">
+
+                <div class="poems-container body-txt-border">
+                    <h2 class="body-txt">Sino?</h2>
+                    <div class="tags-container">
+                        <div class="body-txt1" id="poetry">poetry</div>
+                        <div class="body-txt1" id="activism">activism</div>
+                        <div class="body-txt1" id="ff-poetry">freeform poetry</div>
+                    </div>
+                    <p class="body-txt">
+                        Fear not the children roaming in the streets,<br>
+                        Their small, dirty fingers pressing on the pristine windows of your Ford Ranger FX4,<br>
+                        Begging for a 1-peso coin that might not even fill their stomachs,<br>
+                        Their eyes coated with the indifference that a bright future will never come.<br><br>
+
+                        Fear not the man wasting away on a run-down factory somewhere in Bacolod,<br>
+                        Waiting for the day he stops living from paycheck to paycheck.<br>
+                        His fridge is empty and the bills are piling high,<br>
+                        So he closes his eyes, smiles, and jumps off from the rope that's tied to the ceiling.<br><br>
+
+                        Fear not the woman who's a student activist,<br>
+                        Whose throat becomes hoarse from demanding to end Indigenous killings.<br>
+                        One day she witnessed a soldier dragging a B'laan by the hair to the barracks.<br>
+                        She runs to the nearest police station.<br>
+                        By dusk, she is found floating in the river with her tongue cut and her eyes gouged out.<br><br>
+
+                        Instead, fear the policemen stomping away on the cold concretes of the night,<br>
+                        Armed with a weathered gun half-tucked in their belts,<br>
+                        Making their rounds across the barrio as if they're dedicated to duty,<br>
+                        And waiting for the next teenage girl to come out of the safety of her home,<br>
+                        To drag her under horrors of the night.<br><br>
+
+                        Fear the politicians with promises of "helping" the poor,<br>
+                        They eat up all your support and flush it down the toilet after.<br>
+                        I heard they buy their smiles from the plastic surgeon down the street.<br>
+                        They will never help you, don't count on that.<br>
+                        They count gold instead of responsibilities.<br><br>
+
+                        Fear the judge, the jury, and the lawyer of the courtroom,<br>
+                        You never know if their justice is tainted with the whisper of gold.<br>
+                        You plead for your innocence, knowing the guards planted the gun and the sachet of powder under your blanket.<br>
+                        But your Christian lawyer will plead you guilty as if he's never heard of God.<br><br>
+
+                        Fear the rich who preach their sin-free lifestyle like they're the descended angels of social media.<br>
+                        The know the wine that they're drinking comes from a winery that enslaves their grape farmers.<br>
+                        But they post about it and say, "How delicious! I'll buy another bottle."<br>
+                        Their son also rapes and murders women like they're mere toys, but his parents say,<br>
+                        "Who would be interested in that?"<br><br>
+
+                        Who do we fear? Who don't we fear?<br>
+                        Everything becomes crystal clear,<br>
+                        When you ask their thoughts and hear,<br>
+                        "With power comes great responsibility"<br>
+                        What do they focus on: the power or the responsibility?
+                    </p>
+                </div>
+    
+                <div class="prompt-container body-txt-border">
+                    <h2 class="body-txt">Velvet Wine</h2>
+                    <div class="tags-container">
+                        <div class="body-txt1" id="writing-prompt">writing prompt</div>
+                        <div class="body-txt1" id="short-story">short story</div>
+                    </div>
+                    <p class="body-txt">
+                        The cup in my hand feels heavy.<br><br>
+
+                        Just a little movement and the liquor shifts, 
+                        creating ripples across its enclosure. 
+                        The wine, velvet, reflects the lone moon on the horizon. 
+                        I have forgotten how that used to taste like.<br><br>
+
+                        Ever since...<br><br>
+
+                        Velvet. 
+                        As I continue to look inside the cup which holds the wine, 
+                        I couldn't help but think of…<br><br>
+
+                        Velvet--like her hair.<br><br>
+
+                        I down half the cup in one go.<br><br>
+
+                        The liquor shifts and all I see is blood--<br><br>
+
+                        "-mien..."<br><br>
+
+                        I whip my head up. For a second, all I see is her.<br><br>
+
+                        Radiant under the moonlight, 
+                        her smile rivaling the splendor of the moon. 
+                        Velvet hair sprawls effortlessly over her shoulders and curls over her hips. 
+                        She beckons and I reach a hand.<br><br>
+
+                        "Damien!"<br><br>
+
+                        She vanishes.<br><br>
+
+                        In her wake, brown replaces red and a frown replaces the smile upon her lips. 
+                        My sister--Herida--looks upon me with horror and pity.<br><br>
+
+                        "Damien."<br><br>
+
+                        I look back upon my cup only to see her gone. 
+                        I rub a hand over my eyes.<br><br>
+
+                        "I'm sorry to have startled you awake, Hers. 
+                        You were never meant to see me this way," I said to her.<br><br>
+
+                        Footsteps near me and I look up; we hold gazes before she faced the horizon.<br><br>
+
+                        "I liked her, you know." She opened and closed her mouth, 
+                        as if tasting the words on her tongue. "She was pretty--Evangeline."<br><br>
+
+                        I flinch at the name.<br><br>
+
+                        My lips tremble as I carefully chose words that wouldn't betray my emotions--put a leash on the tears threatening to escape my eyes. 
+                        I fail, however, when the words started to chole on my throat. 
+                        "Yeah. Ev-Evangeline..."<br><br>
+
+                        Hunching over, I release all the pent-up emotions I've been harboring all night:
+                        grief, anger, and sadness. 
+                        The cup slips from my hand and velvet splashes onto the ground.<br><br>
+
+                        Once again, I see her in the wine. 
+                        Sprawled effortlessly on the ground, her velvet hair a shade ligter 
+                        than the velvet liquid underneath her.<br><br>
+
+                        She smiles, and I bitterly laugh.<br><br>
+
+                        Evangeline...<br><br>
+
+                        A warm hand settles upon my back and I couldn't help but think…<br><br>
+
+                        Evangeline...<br><br>
+
+                        If only you hadn't seen that...<br><br>
+
+                        I wouldn't had to kill you.
+                    </p>
+                </div>
+    
+                <div class="log-container body-txt-border">
+                    <h2 class="body-txt">Good Omens: Aziraphale's Letters</h2>
+                    <div class="tags-container">
+                        <div class="body-txt1" id="epistolary">epistolary</div>
+                        <div class="body-txt1" id="short-story2">short story</div>
+                    </div>
+                    <p class="body-txt">
+                        <b>In the Beginning</b><br><br>
+
+                        Dear Diary,<br><br>
+
+                        I do hope I've taken the right action for what I had done today. 
+                        I really do hope so. Otherwise, I'd get punished for what I thought I had been doing right, 
+                        when it reality, I had done something evil.<br><br>
+
+                        You see, I've given away something valuable of mine, 
+                        something given to me by the angels as a token. 
+                        It was a flaming sword, and it flamed like anything. 
+                        But Eve was already expecting and the pair had no means to protect themselves 
+                        the moment they were cast off from the Garden of Eden. 
+                        Additionally, the first storm had been brewing ever since then. 
+                        It was the least bit of help I could give, I thought, giving away the sword.<br><br>
+
+                        Crowley, the demon who transformed into a serpent to tempt Adam and Eve, 
+                        joked that it would be funny if we both got it wrong, 
+                        that he did the good thing and I did the bad. 
+                        But it just made me just a little bit more anxious.<br><br>
+
+                        Ooo, I really do hope it was the best course of action. 
+                        Otherwise, Iid really be punished by the angels.<br><br>
+
+                        Hoping,<br><br>
+
+                        Aziraphale.<br><br><br>
+
+                        <b>11 Years Ago</b><br><br>
+
+                        Dear Diary,<br><br>
+
+                        Crowley and I have come to a tacit agreement to supervise in the upbringing 
+                        of the Antichrist. He told me the child isn't evil of itself, it's got everything 
+                        to do with potentiality. He might be potentially good, and potentially evil all 
+                        at the same time. Well, I do agree with him. Despite the child's blood and nature, 
+                        he still is a child, after all.<br><br>
+
+                        I thought it'd be worth the shot, trying to raise the child with as much 
+                        supervision from Heaven as he can. Of course, I couldn't peep of this to my 
+                        superiors Above, and neither can Crowley. I guess it's all up to us both to 
+                        become the best godfathers that we can be.<br><br>
+
+                        Godfathers. I've never thought there would come a day.<br><br>
+
+                        Just a little bit excited,<br><br>
+
+                        Aziraphale<br><br><br>
+
+                        <b>Wednesday</b><br><br>
+
+                        Dear Diary,<br><br>
+
+                        We raised the wrong child. Oh my, we just raised the wrong child.<br><br>
+
+                        I'd be damned if Armageddon starts because of this.<br><br>
+
+                        Panicking,<br><br>
+
+                        Aziraphale.<br><br><br>
+
+                        <b>Saturday</b><br><br>
+
+                        Dear Diary,<br><br>
+
+                        The past few days felt like--what do you call those things?--a rollercoaster ride. 
+                        Fortunately since my last entry, we've managed to locate the Antichrist through 
+                        an extensive reading of The Nice and Accurate Prophecies of Agnes Nutter, Witch. 
+                        Then, Crowley and I had been separated by the interference of our superiors. 
+                        Truthfully, I'd been quite lonely without the demon by my side.<br><br>
+
+                        It's been millennium since we've had to part ways for quite a long period of time.<br><br>
+
+                        However, we were still able to accomplish what we originally planned—to push 
+                        back the date for Armageddon. 
+                        It's been quite a journey up until this point, 
+                        but Crowley's still Crowley and I'm still me. 
+                        And to put it frankly, I'm happy our superiors turned a blind eye on the situation. 
+                        Otherwise, they would've found out about our arrangement and we would've been taken.<br><br>
+
+                        I hope it'll be a few more millennia that I'll get to share this friendship 
+                        with the serpent.<br><br>
+
+                        Satisfied,<br><br>
+
+                        Aziraphale.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>

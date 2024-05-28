@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Monotype Italian Old Style', sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Bon Vivant Regular';
+    src: url('../CCC181 Personal Website/fonts/BonVivant-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Monotype Italian Old Style';
+    src: url('../CCC181 Personal Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
+}
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color1: #FFFFFF;
+    --text-color2: #000000;
+    --alternative-black: #333333;
+    --accent-color: #C39738;
+    --brighter-accent: #E4A62E;
+    --transitions: all 0.4s ease;
+    --total-slides: 3;
+}
+
+*::selection {
+    color: var(--brighter-accent);
+}
+
+body {
+    /* background-image: url("../CCC181 Personal Website/images/final1.png"); */
+    background: var(--bg-color);
+    /* background: yellow; */
+    color: var(--text-color2);
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    /* background-image: url("../CCC181 Personal Website/images/nav bg.png"); */
+    background: transparent;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+    /* -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); */
+}
+
+.navbar.active {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.logo-container {
+    width: 380px;
+    height: 100%;
+    /* background: red; */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 100%;
+}
+
+.menu a {
+    position: relative;
+    color: var(--text-color2);
+    font-size: 14px;
+    margin-left: 60px;
+    /* mix-blend-mode: difference; */
+}
+
+.menu a:hover {
+    color: var(--brighter-accent);
+    transition: var(--transitions);
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brighter-accent);
+    transition: var(--transitions);
+}
+
+.menu a:hover::before {
+    width: 100%;
+}
+
+.heading-container {
+    /* background: red; */
+    margin-top: 80px;
+    padding-left: 70px;
+    padding-right: 70px;
+    position: relative;
+    height: 132px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.heading-container h1 {
+    /* background: blue; */
+    font-family: 'Bon Vivant Regular', serif;
+    font-size: 5vw;
+    position: relative;
+    font-weight: lighter;
+    color: var(--text-color2);
+    /* color: lightblue; */
+}
+
+.portfolio-container {
+    /* background: red; */
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+.folio1,
+.folio2,
+.folio3,
+.folio4 {
+    /* background: yellow; */
+    width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.folio1 img,
+.folio2 img,
+.folio3 img,
+.folio4 img {
+    width: 250px;
+    height: 190px;
+    border-radius: 10px;
+    box-shadow: 2.5px 2.5px 5px 2.5px rgba(0,0,0,0.2);
+}
+
+.text-container {
+    width: 100%;
+    height: 100%;
+    /* background: blue; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    /* padding-right: 25px; */
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+}
+
+.text-container h2 {
+    width: 100%;
+    color: var(--text-color2);
+    font-weight: lighter;
+    /* justify-content: flex-start; */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.text-container p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.text-container a {
+    color: var(--text-color1);
+    padding: 10px;
+    background: var(--alternative-black);
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-container a:hover {
+    background: var(--accent-color);
+    transition: var(--transitions);
+}
+
+
+
