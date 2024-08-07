@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: 'Bon Vivant Regular';
-    src: url('../CCC181 Personal Website/fonts/BonVivant-Regular.ttf')  format('truetype');
+    src: url('https://ushushushu.github.io/CCC181-Personal-Website/fonts/BonVivant-Regular.ttf')  format('truetype');
 }
 
 @font-face {
     font-family: 'Monotype Italian Old Style';
-    src: url('../CCC181 Personal Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
+    src: url('https://ushushushu.github.io/CCC181-Personal-Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
 }
 
 :root {
@@ -34,16 +34,13 @@
 }
 
 body {
-    /* background-image: url("../CCC181 Personal Website/images/final1.png"); */
     background: var(--bg-color);
-    /* background: yellow; */
     color: var(--text-color2);
 }
 
 /* NAVIGATION BAR */
 
 .navbar {
-    /* background-image: url("../CCC181 Personal Website/images/nav bg.png"); */
     background: transparent;
     height: 80px;
     width: 100%;
@@ -57,8 +54,6 @@ body {
     align-items: center;
     z-index: 100;
     overflow: hidden;
-    /* -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px); */
 }
 
 .navbar.active {
@@ -69,7 +64,6 @@ body {
 .logo-container {
     width: 380px;
     height: 100%;
-    /* background: red; */
     padding: 20px;
     display: flex;
     align-items: center;
@@ -84,7 +78,6 @@ body {
     color: var(--text-color2);
     font-size: 14px;
     margin-left: 60px;
-    /* mix-blend-mode: difference; */
 }
 
 .menu a:hover {
@@ -108,7 +101,6 @@ body {
 }
 
 .heading-container {
-    /* background: red; */
     margin-top: 80px;
     padding-left: 70px;
     padding-right: 70px;
@@ -120,22 +112,18 @@ body {
 }
 
 .heading-container h1 {
-    /* background: blue; */
     font-family: 'Bon Vivant Regular', serif;
     font-size: 5vw;
     position: relative;
     font-weight: lighter;
     color: var(--text-color2);
-    /* color: lightblue; */
 }
 
 .portfolio-container {
-    /* background: red; */
     width: 100%;
     height: 600px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -147,7 +135,6 @@ body {
 .folio2,
 .folio3,
 .folio4 {
-    /* background: yellow; */
     width: 500px;
     height: 300px;
     display: flex;
@@ -168,12 +155,9 @@ body {
 .text-container {
     width: 100%;
     height: 100%;
-    /* background: blue; */
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-    /* padding-right: 25px; */
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 50px;
@@ -183,7 +167,6 @@ body {
     width: 100%;
     color: var(--text-color2);
     font-weight: lighter;
-    /* justify-content: flex-start; */
     position: relative;
     margin-bottom: 20px;
 }
@@ -209,6 +192,3 @@ body {
     background: var(--accent-color);
     transition: var(--transitions);
 }
-
-
-
