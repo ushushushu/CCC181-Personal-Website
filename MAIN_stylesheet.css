@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: 'Bon Vivant Regular';
-    src: url('../CCC181 Personal Website/fonts/BonVivant-Regular.ttf')  format('truetype');
+    src: url('https://ushushushu.github.io/CCC181-Personal-Website/fonts/BonVivant-Regular.ttf')  format('truetype');
 }
 
 @font-face {
     font-family: 'Monotype Italian Old Style';
-    src: url('../CCC181 Personal Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
+    src: url('https://ushushushu.github.io/CCC181-Personal-Website/fonts/ItalianOldStyleMTStd.otf')  format('opentype');
 }
 
 :root {
@@ -34,13 +34,12 @@
 }
 
 body {
-    background-image: url("../CCC181 Personal Website/images/final1.png");
+    background-image: url("https://ushushushu.github.io/CCC181-Personal-Website/images/final1.png");
 }
 
 /* NAVIGATION BAR */
 
 .navbar {
-    /* background-image: url("../CCC181 Personal Website/images/nav bg.png"); */
     background: transparent;
     height: 80px;
     width: 100%;
@@ -54,8 +53,6 @@ body {
     align-items: center;
     z-index: 100;
     overflow: hidden;
-    /* -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px); */
 }
 
 .navbar.active {
@@ -66,7 +63,6 @@ body {
 .logo-container {
     width: 380px;
     height: 100%;
-    /* background: red; */
     padding: 20px;
     display: flex;
     align-items: center;
@@ -81,7 +77,6 @@ body {
     color: var(--text-color1);
     font-size: 14px;
     margin-left: 60px;
-    /* mix-blend-mode: difference; */
 }
 
 .menu a:hover {
@@ -107,19 +102,10 @@ body {
 /* OPENING */
 
 .opening {
-    /* background: red; */
-    /* width: 600px;
-    height: 150px;
-    margin-top: 170px;
-    margin-left: 110px;
-    display: flex;
-    align-items: center; */
     position: relative;
-    /* overflow: hidden; */
 }
 
 .opening h1 {
-    /* background: yellow; */
     margin-top: 90px;
     margin-left: 110px;
     font-family: 'Bon Vivant Regular', serif;
@@ -131,7 +117,6 @@ body {
 }
 
 .opening h2 {
-    /* background: orange; */
     position: absolute;
     font-size: 18px;
     color: var(--brighter-accent);
@@ -142,9 +127,7 @@ body {
 }
 
 .opening-paragraph p {
-    /* background: red; */
     font-family: 'Roboto', sans-serif;
-    /* font-weight: bolder; */
     width: 300px;
     height: 50px;
     position: absolute;
@@ -202,7 +185,6 @@ body {
 
 .welcome-section {
     background: var(--alternative-black);
-    /* background: var(--bg-color); */
     margin-top: 620px;
     width: 100%;
     height: 330px;
@@ -214,28 +196,23 @@ body {
 }
 
 .welcome-section p {
-    /* background: yellow; */
     padding-bottom: 20px;
     width: 600px;
     font-size: 25px;
     color: var(--text-color1);
-    /* color: var(--alternative-black); */
     text-align: center;
 }
 
 .welcome-section h3 {
-    /* background: blue; */
     font-family: 'Roboto', sans-serif;
     padding-top: 20px;
     color: var(--accent-color);
     font-size: 12px;
     text-align: center;
-    /* display: flex; */
 }
 
 .literature-text {
     position: absolute;
-    /* background: var(--alternative-black); */
     background: #7c474a;
     margin-top: 950px;
     width: 100%;
@@ -247,14 +224,10 @@ body {
 
 .literature-text h1 {
     font-family: 'Playfair Display', serif;
-    /* font-family: 'Bon Vivant Regular', serif; */
     position: absolute;
     top: 70px;
-    /* top: -45px; */
-    /* color: #f6dab4; */
     color: var(--accent-color);
     font-size: 10vw;
-    /* font-size: 20vw; */
     letter-spacing: 5px;
     font-weight: lighter;
 }
@@ -278,7 +251,6 @@ body {
 }
 
 .options-container {
-    /* background: black; */
     position: absolute;
     margin-top: 1020px;
     width: 100%;
@@ -289,8 +261,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* z-index: 5; */
-    /* backdrop-filter: blur(10px); */
 }
 
 .options-container h3 {
@@ -302,30 +272,20 @@ body {
 }
 
 #statue-model {
-    /* background: var(--accent-color); */
     height: 620px;
     width: 100%;
     margin-top: 950px;
     position: absolute;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     overflow: hidden;
-    /* background: var(--alternative-black); */
-    /* top: calc(50% - 250px); */
-    /* right: 7%; */
 }
 
 /* This styles the 3D object inserted in the aside container */
 #statue-model model-viewer {
-    /* background: yellow; */
     top: -100px;
     overflow: hidden;
     height: 300%;
     width: 100%;
     position: relative;
-    /* rotate: 90deg; */
-    /* position: {[0, -6, 0]} ; */
     margin-left: 8%;
     z-index: 4;
 }
@@ -352,27 +312,15 @@ body {
     margin-top: 1570px;
     width: 100%;
     height: 620px;
-    /* background: var(--alternative-black); */
     background: var(--bg-color);
-    /* background: yellow; */
-    /* background: #fff; */
     position: absolute;
 }
 
 .portfolio-text {
-    /* background: yellow; */
     float: right;
     position: relative;
-    margin-top: 100px;
-    /* margin-top: 80px; */
-    
+    margin-top: 100px; 
     margin-right: 68px;
-
-    /* width: 661px; */
-    /* width: 595px; */
-    
-    /* 54 space between */
-
     width: 541px;
     height: 470px;
     display: flex;
@@ -382,46 +330,33 @@ body {
     justify-content: space-between;
     padding-top: 60px;
     padding-bottom: 190px;
-    /* column-gap: 50px; */
 }
 
 .portfolio-txt-heading {
-    /* background: green; */
     position: relative;
     width: 100%;
     text-align: center;
 }
 
 .portfolio-text h1 {
-    /* background: red; */
     width: 100%;
     font-family: 'Playfair Display', serif;
-    /* font-family: 'Bon Vivant Regular', serif; */
     color: var(--alternative-black);
     font-size: 4vw;
     font-weight: lighter;
-    /* left: 120px; */
-    /* position: absolute; */
     line-height: 60px;
 }
 
 .portfolio-text h2 {
-    /* background: blue; */
     font-size: 18px;
     color: var(--brighter-accent);
-    /* top: 100px;
-    left: 120px; */
-    /* left: 138px; */
     z-index: 1;
     font-weight: lighter;
 }
 
 .portfolio-text p {
     font-family: 'Roboto', sans-serif;
-    /* background: orange; */
     font-size: 15px;
-    /* padding-top: 50px; */
-    /* top: 50px; */
     padding-left: 76px;
     padding-right: 76px;
     text-align: justify;
@@ -429,7 +364,6 @@ body {
 }
 
 .slider-container {
-    /* background: black; */
     position: absolute;
     margin-top: 100px;
     margin-left: 70px;
@@ -468,7 +402,6 @@ body {
     margin-top: 300px;
     margin-left: 630px;
     rotate: 90deg;
-    /* z-index: 1; */
 }
 
 .radio-container input {
